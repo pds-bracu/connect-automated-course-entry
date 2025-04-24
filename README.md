@@ -1,6 +1,6 @@
-# CONNECT Course Entry Automation Script
+# CONNECT Course Entry Automation
 
-This script automates course entry in the CONNECT platform — the course offering and scheduling system developed and used by BRAC University. It reduces the manual burden of entering details for each course section by automatically filling out necessary forms across multiple pages.
+This [script](main.js) automates course entry in the CONNECT platform — the course offering and scheduling system developed and used by BRAC University. It reduces the manual burden of entering details for each course section by automatically filling out necessary forms across multiple pages.
 
 ---
 
@@ -32,7 +32,7 @@ To avoid manually editing the top variables every time (lines 7–25 of the scri
 2. The sheet will **auto-generate the formatted script lines** in cell `Z2`.
 3. Simply **copy the cell Z2** and **paste to overwrite lines 7 to 25** in the script.
 4. Edit course, degree, and semester information on line `28-30` if necessary.
-5. Run the script using browser's developer interface (described below).
+5. Run the [script](main.js) using browser's developer interface (described below).
 
 ---
 
@@ -49,7 +49,7 @@ To avoid manually editing the top variables every time (lines 7–25 of the scri
 1. Open CONNECT and navigate to: Registrar → Course Offered → Course Section
 2. Press `Ctrl+Shift+I` (or right-click → Inspect) to open **Developer Tools**.
 3. Go to the **Sources** tab → Left Pane → `Snippets` → Right-click → `New Snippet`.
-4. Paste the script into the new snippet.
+4. Paste the [script](main.js) into the new snippet.
 5. Paste your course-specific variables from the Google Sheet (as above).
 6. Hit `Ctrl + Enter` to run.
 7. Manually review the section and click **Send For Approval** only when satisfied.
