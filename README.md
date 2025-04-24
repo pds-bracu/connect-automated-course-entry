@@ -5,7 +5,7 @@ This [script](main.js) automates course entry in the CONNECT platform — the co
 ---
 
 🚀 **Watch the Tutorial (Highly Recommended)**  
-🎥 [Click here to watch the 10-minute YouTube walkthrough](https://your-video-link-here.com)  
+🎥 [Click here to watch the 10-minute YouTube walkthrough](https://youtu.be/SOEYYkZC2CE)
 This video shows how to use the script effectively and safely.
 
 ---
