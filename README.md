@@ -5,8 +5,7 @@ This [script](main.js) automates course entry in the CONNECT platform — the co
 ---
 
 🚀 **Watch the Tutorial (Highly Recommended)**  
-🎥 [Click here to watch this short video tutorial](https://youtu.be/RYprXukVBEE)
-This video shows how to use the script effectively and safely.
+🎥 [Click here to watch this short video tutorial](https://youtu.be/RYprXukVBEE). This video shows how to use the script effectively and safely.
 
 ---
 
@@ -25,7 +24,7 @@ This video shows how to use the script effectively and safely.
 
 To avoid manually editing the top variables every time (lines 7–25 of the script), use the following Google Sheet template:
 
-📄 [Google Sheet Template for Course Entry Script](https://docs.google.com/spreadsheets/d/1wSfk7hZBF89dioSPjiclteF5tXy8ORsyPwsG9ldhdhU/edit?usp=sharing)
+📄 [Google Sheet Template for Script Variables](https://docs.google.com/spreadsheets/d/1wSfk7hZBF89dioSPjiclteF5tXy8ORsyPwsG9ldhdhU/edit?usp=sharing)
 
 ### ✨ How to Use:
 1. Enter your course details in the sheet.
