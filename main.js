@@ -29,7 +29,9 @@ final_exam_date = '20-09-2025';
 final_start_time = '08:30 AM';
 final_end_time = '10:30 AM';
 
-create_course();   // comment out if you are editing (Updating)
+// sometimes the webpage responses slowly after pressing +create button
+// in that case, comment out the line below, manually press +Create and then run the script
+create_course();
 await sleep(2000);
 
 ////// You can also edit specific pages by simply commenting out the sections related to the other pages.
