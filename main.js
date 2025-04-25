@@ -1,7 +1,7 @@
 // Go to CONNECT --> Login --> Registrar --> Course Offered --> Course Section
 // Developer Tools (Ctrl+Shift+I) -> Sources -> Left Pane (may be hidden) -> Snippets -> New Snipptes -> Paste code
 // Ctrl + Enter to run
-// It is recommended to reopen CONNECT in new tab after 2/3 runs
+// It is recommended to reopen CONNECT in a new tab after 2/3 runs
 
 // Adjust the following parameters
 course_code = 'CSE250';
