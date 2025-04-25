@@ -8,7 +8,7 @@ course_code = 'CSE250';
 degree = 'Undergraduate';
 semester = 'SUMMER 2025';
 
-// paste and overwrite lines 7 to 25 with the cell content copied from gsheet and remove the quotations ("....") after pasting
+// paste and overwrite lines 12 to 30 with the cell content copied from gsheet and remove the quotations ("....") after pasting
 section_no = '20';
 section_capacity = '25';
 theory_day = 'Sunday';
