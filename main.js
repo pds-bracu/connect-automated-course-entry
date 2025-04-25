@@ -3,7 +3,12 @@
 // Ctrl + Enter to run
 // Recommended to REFRESH the webpage before each time before running for a section
 
-// paste after this line the cell content copied from gsheet and remove the quotations ("....") after pasting
+// Adjust the following parameters
+course_code = 'CSE250';
+degree = 'Undergraduate';
+semester = 'SUMMER 2025';
+
+// paste and overwrite lines 7 to 25 with the cell content copied from gsheet and remove the quotations ("....") after pasting
 section_no = '20';
 section_capacity = '25';
 theory_day = 'Sunday';
@@ -23,11 +28,6 @@ mid_end_time = '10:30 AM';
 final_exam_date = '20-09-2025';
 final_start_time = '08:30 AM';
 final_end_time = '10:30 AM';
-
-// Change the following parameters accordingly
-course_code = 'CSE250';
-degree = 'Undergraduate';
-semester = 'SUMMER 2025';
 
 create_course();   // comment out if you are editing (Updating)
 await sleep(2000);
