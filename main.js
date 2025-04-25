@@ -1,7 +1,7 @@
 // Go to CONNECT --> Login --> Registrar --> Course Offered --> Course Section
 // Developer Tools (Ctrl+Shift+I) -> Sources -> Left Pane (may be hidden) -> Snippets -> New Snipptes -> Paste code
 // Ctrl + Enter to run
-// Recommended to REFRESH the webpage before each time before running for a section
+// It is recommended to reopen CONNECT in new tab after 2/3 runs
 
 // Adjust the following parameters
 course_code = 'CSE250';
@@ -35,21 +35,24 @@ await sleep(2000);
 ////// You can also edit specific pages by simply commenting out the sections related to the other pages.
 
 ////////////// Page 1: Section Page //////////////
-select_dropdown('academic_degree', degree);
+select('academic_degree', degree);
 await sleep(2000);
-select_dropdown('semester_session', semester);
+select('semester_session', semester);
 await sleep(2000);
-select_dropdown('course_code', course_code);
+select('course_code', course_code);
 await sleep(2000);
-select_dropdown('theory_room', theory_room);
+select('theory_room', theory_room);
 await sleep(2000);
 insert_section_no(section_no);
+await sleep(500);
 insert_section_capacity(section_capacity);
+await sleep(500);
 select_custom_time();
+await sleep(500);
 turn_on_has_lab();
 
 if (theory_faculty !== '') {
-    select_dropdown('theory_faculty', theory_faculty);
+    select('theory_faculty', theory_faculty);
     await sleep(2000);
     add_faculty('theory');
     await sleep(2000);
@@ -61,7 +64,7 @@ await sleep(4000);
 ////////////// Page 2: Schedule Page //////////////
 set_time('theory', 'start', theory_start_time);
 set_time('theory', 'end', theory_end_time);
-select_dropdown('theory_day', theory_day);
+select('theory_day', theory_day);
 await sleep(2000);
 add_schedule('theory');
 await sleep(2000);
@@ -80,17 +83,17 @@ await sleep(4000);
 
 
 ////////////// Page 3: Lab Page //////////////
-select_dropdown('lab_room', lab_room);
+select('lab_room', lab_room);
 await sleep(2000);
 
 if (lab_faculty_1 !== '') {
-    select_dropdown('lab_faculty', lab_faculty_1);
+    select('lab_faculty', lab_faculty_1);
     await sleep(2000);
     add_faculty('lab');
     await sleep(2000);
 }
 if (lab_faculty_2 !== '') {
-    select_dropdown('lab_faculty', lab_faculty_2);
+    select('lab_faculty', lab_faculty_2);
     await sleep(2000);
     add_faculty('lab');
     await sleep(2000);
@@ -102,7 +105,7 @@ await sleep(2000);
 ////////////// Page 4: Lab Schedule Page //////////////
 set_time('lab', 'start', lab_start_time);
 set_time('lab', 'end', lab_end_time);
-select_dropdown('lab_day', lab_day);
+select('lab_day', lab_day);
 await sleep(2000);
 add_schedule('lab');
 await sleep(2000);
@@ -176,7 +179,7 @@ function add_faculty(theory_or_lab_faculty) {
     document.querySelectorAll('button.btn.btn-primary.default')[index].click();
 }
 
-async function select_dropdown(field_name, selection) {
+async function select(field_name, selection) {
     const index = {
         academic_degree: 0,
         semester_session: 1,
@@ -266,7 +269,7 @@ async function set_date(type, date) {
     await sleep(200);
 }
 
-async function insert_section_no(section_no) {
+function insert_section_no(section_no) {
     labels = document.querySelectorAll('label');
     labels.forEach(label => {
         if (label.textContent.includes('Section Name')) {
@@ -277,10 +280,9 @@ async function insert_section_no(section_no) {
         }
     }
     );
-    await sleep(2000);
 }
 
-async function insert_section_capacity(capacity) {
+function insert_section_capacity(capacity) {
     labels = document.querySelectorAll('label');
     labels.forEach(label => {
         if (label.textContent.includes('Section Capacity')) {
@@ -291,7 +293,6 @@ async function insert_section_capacity(capacity) {
         }
     }
     );
-    await sleep(2000);
 }
 
 async function turn_on_has_lab() {
