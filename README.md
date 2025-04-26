@@ -20,18 +20,19 @@ This [script](main.js) automates course entry in the CONNECT platform — the co
 
 ---
 
-## 📋 Auto-Generate Script Variables with Google Sheet
+## 📋 Get the Script Variables (lines 12 to 31)
 
-To avoid manually editing the top variables every time (lines 7–25 of the script), use the following Google Sheet template:
+To avoid manually editing the script variables every time (lines 12–25 of the script), use the following Google Sheet template:
 
 📄 [Google Sheet Template for Script Variables](https://docs.google.com/spreadsheets/d/1wSfk7hZBF89dioSPjiclteF5tXy8ORsyPwsG9ldhdhU/edit?usp=sharing)
 
 ### ✨ How to Use:
 1. Enter your course details in the sheet.
-2. The sheet will **auto-generate the formatted script lines** in cell `Z2`.
-3. Simply **copy the cell Z2** and **paste to overwrite lines 7 to 25** in the script.
-4. Edit course, degree, and semester information on line `28-30` if necessary.
-5. Run the [script](main.js) using browser's developer interface (described below).
+2. The sheet will **auto-generate the formatted script lines** in cell `AB2`, row 2 of the last column.
+3. Simply **copy the cell `AB2`** and **paste to overwrite lines 12 to 31** in the script.
+4. Remove the double-quation marks at the start of line 12 and end of line 31.
+5. Edit course, degree, and semester information on line `7-9` as you need.
+6. Run the [script](main.js) using browser's developer interface (described below).
 
 ---
 
@@ -96,4 +97,4 @@ Found a bug or want to collaborate? Feel free to raise an issue or suggest enhan
 
 ---
 
-Made purely to help fellow faculty and admin staff.
+Made to help fellow faculty and admin staff.
