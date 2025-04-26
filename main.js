@@ -4,30 +4,31 @@
 // It is recommended to reopen CONNECT in a new tab after 2/3 runs
 
 // Adjust the following parameters
-course_code = 'CSE250';
+course_code = 'CSE402';
 degree = 'Undergraduate';
 semester = 'SUMMER 2025';
 
-// paste and overwrite lines 12 to 30 with the cell content copied from gsheet and remove the quotations ("....") after pasting
-section_no = '20';
-section_capacity = '25';
-theory_day = 'Sunday';
-theory_start_time = '03:30 PM';
-theory_end_time = '04:50 PM';
+// paste and overwrite lines 12 to 31 with the cell content copied from gsheet and remove the quotations ("....") after pasting
+section_no = '01';
+section_capacity = '38';
+theory_day_1 = 'Monday';
+theory_day_2 = 'Wednesday';
+theory_start_time = '11:00 AM';
+theory_end_time = '12:20 PM';
 theory_room = '09D-17C';
-theory_faculty = '';
-lab_day = 'Monday';
+theory_faculty = 'SDAS';
+lab_day = 'Thursday';
 lab_start_time = '08:00 AM';
 lab_end_time = '10:50 AM';
-lab_room = 'FT10-01L';
+lab_room = '09F-24L';
 lab_faculty_1 = '';
 lab_faculty_2 = '';
-mid_exam_date = '02-08-2025';
-mid_start_time = '08:30 AM';
-mid_end_time = '10:30 AM';
-final_exam_date = '20-09-2025';
-final_start_time = '08:30 AM';
-final_end_time = '10:30 AM';
+mid_exam_date = '30-07-2025';
+mid_start_time = '11:00 AM';
+mid_end_time = '01:00 PM';
+final_exam_date = '18-09-2025';
+final_start_time = '11:00 AM';
+final_end_time = '01:00 PM';
 
 // sometimes the webpage responses slowly after pressing +create button
 // in that case, comment out the line below, manually press +Create and then run the script
@@ -66,7 +67,14 @@ await sleep(4000);
 ////////////// Page 2: Schedule Page //////////////
 set_time('theory', 'start', theory_start_time);
 set_time('theory', 'end', theory_end_time);
-select('theory_day', theory_day);
+select('theory_day', theory_day_1);
+await sleep(2000);
+add_schedule('theory');
+await sleep(2000);
+
+set_time('theory', 'start', theory_start_time);
+set_time('theory', 'end', theory_end_time);
+select('theory_day', theory_day_2);
 await sleep(2000);
 add_schedule('theory');
 await sleep(2000);
