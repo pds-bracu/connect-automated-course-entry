@@ -14,27 +14,27 @@ section_no = '10';
 section_capacity = '38';
 theory_day_1 = 'Monday';
 theory_day_2 = 'Wednesday';
-theory_start_time = '11:00 AM';
-theory_end_time = '12:20 PM';
+theory_start_time = '12:30 PM';
+theory_end_time = '01:50 PM';
 theory_room = '09D-17C';
 theory_faculty = 'PDS';
-lab_day = 'Thursday';
-lab_start_time = '08:00 AM';
-lab_end_time = '10:50 AM';
-lab_room = '09F-24L';
+lab_day = 'Tuesday';
+lab_start_time = '11:00 AM';
+lab_end_time = '01:50 PM';
+lab_room = '12B-20L';
 lab_faculty_1 = 'PDS';
-lab_faculty_2 = 'PDS';
-mid_exam_date = '30-07-2025';
+lab_faculty_2 = '';
+mid_exam_date = '31-07-2025';
 mid_start_time = '11:00 AM';
 mid_end_time = '01:00 PM';
-final_exam_date = '18-09-2025';
+final_exam_date = '19-09-2025';
 final_start_time = '11:00 AM';
 final_end_time = '01:00 PM';
 
 // sometimes the webpage responses slowly after pressing +create button
 // in that case, comment out the line below, manually press +Create and then run the script
-// create_course();
-// await sleep(2000);
+create_course();
+await sleep(3000);
 
 ////// You can also edit specific pages by simply commenting out the sections related to the other pages.
 
