@@ -6,7 +6,8 @@
 // DO NOT scroll while the script runs
 // Otherwise it may change dropdown selection
 
-// paste and overwrite lines 7 to 29 with the cell content copied from gsheet and remove the quotations ("....") after pasting
+// paste and overwrite lines 11 to 33 with the cell content copied from gsheet
+// remove the quotations ("....") after pasting
 degree = 'Undergraduate';
 semester = 'SUMMER 2025';
 course_code = 'CSE250';
