@@ -8,34 +8,34 @@
 
 // paste and overwrite lines 11 to 33 with the cell content copied from gsheet
 // remove the quotations ("....") after pasting
-degree = 'Undergraduate';
-semester = 'SUMMER 2025';
-course_code = 'CSE250';
-section_no = '10';
-section_capacity = '38';
-theory_day_1 = 'Monday';
-theory_day_2 = 'Wednesday';
-theory_start_time = '12:30 PM';
-theory_end_time = '01:50 PM';
-theory_room = '09D-17C';
+degree = 'Undergrad';
+semester = 'FALL 2025';
+course_code = 'CSE251';
+section_no = '5A';
+section_capacity = '42';
+theory_day_1 = 'Sunday';
+theory_day_2 = 'Tuesday';
+theory_start_time = '09:30 AM';
+theory_end_time = '10:50 AM';
+theory_room = '07H-27C';
 theory_faculty = 'PDS';
-lab_day = 'Tuesday';
-lab_start_time = '11:00 AM';
-lab_end_time = '01:50 PM';
-lab_room = '12B-20L';
-lab_faculty_1 = 'PDS';
-lab_faculty_2 = '';
-mid_exam_date = '31-07-2025';
-mid_start_time = '11:00 AM';
-mid_end_time = '01:00 PM';
-final_exam_date = '19-09-2025';
-final_start_time = '11:00 AM';
-final_end_time = '01:00 PM';
+lab_day = 'Monday';
+lab_start_time = '08:00 AM';
+lab_end_time = '10:50 AM';
+lab_room = 'FT10-02L';
+lab_faculty_1 = 'SKE';
+lab_faculty_2 = 'MFSQ';
+mid_exam_date = '15-11-2025';
+mid_start_time = '04:30 PM';
+mid_end_time = '06:00 PM';
+final_exam_date = '08-01-2026';
+final_start_time = '04:30 PM';
+final_end_time = '06:00 PM';
 
 // sometimes the webpage responses slowly after pressing +create button
 // in that case, comment out the line below, manually press +Create and then run the script
 create_course();
-await sleep(3000);
+await sleep(2000);
 
 ////// You can also edit specific pages by simply commenting out the sections related to the other pages.
 
@@ -55,6 +55,7 @@ await sleep(500);
 select_custom_time();
 await sleep(500);
 turn_on_has_lab();
+await sleep(1000);
 
 if (theory_faculty !== '') {
     select('theory_faculty', theory_faculty);
@@ -147,12 +148,14 @@ async function send_for_approval() {
 async function next_page_1_3(index) {
     button = document.querySelectorAll('button.btn.m-1.btn-primary');
     await sleep(1000);
+    // scroll(button[parseInt(index)]);
     button[parseInt(index)].click();
 }
 
 async function next_page_2_4(index) {
     button = document.querySelectorAll('button.btn.me-2.btn-primary');
     await sleep(1000);
+    // scroll(button[parseInt(index)]);
     button[parseInt(index)].click();
 }
 
@@ -167,7 +170,6 @@ function select_custom_time() {
         if (radio_button.textContent.includes('Custom Time')) {
             input = radio_button.querySelector('input[type="radio"]');
             radio_button.querySelector(`label[for="${input.id}"]`).click();
-
         }
     });
 }
@@ -183,7 +185,7 @@ async function add_schedule(theory_or_lab_schedule) {
     document.querySelectorAll('button.btn.btn-primary.mb-8')[index].click();
 }
 
-function add_faculty(theory_or_lab_faculty) {
+async function add_faculty(theory_or_lab_faculty) {
     let index;
     if (theory_or_lab_faculty == 'theory') {
         index = 0;
@@ -191,7 +193,10 @@ function add_faculty(theory_or_lab_faculty) {
     else if (theory_or_lab_faculty == 'lab') {
         index = 1;
     }
-    document.querySelectorAll('button.btn.btn-primary.default')[index].click();
+    add_faculty_button = document.querySelectorAll('button.btn.btn-primary.default')[index];
+    scroll(add_faculty_button);
+    await sleep(500);
+    add_faculty_button.click();
 }
 
 async function select(field_name, selection) {
@@ -251,6 +256,7 @@ async function set_time(type, position, time) {
     const hour_element = document.querySelectorAll('input[aria-label="Hours"]');
     hour_element[index].value = hour;
     hour_element[index].dispatchEvent(new Event('change', { bubbles: true }));
+    scroll(hour_element[index]);
     await sleep(200);
 
     const minute_element = document.querySelectorAll('input[aria-label="Minutes"]');
@@ -292,6 +298,7 @@ function insert_section_no(section_no) {
             field = document.getElementById(id);
             field.value = section_no;
             field.dispatchEvent(new Event('input', { bubbles: true }));
+            scroll(field);
         }
     }
     );
@@ -321,6 +328,11 @@ async function turn_on_has_lab() {
         }
     });
     await sleep(2000);
+}
+
+async function scroll(element) {
+    element.scrollIntoView({behavior: "smooth", block: "center"});
+    await sleep(500);
 }
 
 function sleep(ms) {
