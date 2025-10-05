@@ -1,13 +1,13 @@
 // Go to CONNECT --> Login --> Registrar --> Course Offered --> Course Section
 // Developer Tools (Ctrl+Shift+I) -> Sources -> Left Pane (may be hidden) -> Snippets -> New Snipptes -> Paste code
+// paste and overwrite lines 11 to 33 with the cell content copied from gsheet
+// remove the quotations ("....") after pasting
 // Ctrl + Enter to run
-// It is recommended to reopen CONNECT in a new tab after 2/3 runs
 
+// It is recommended to reopen CONNECT in a new tab after 2/3 runs
 // DO NOT scroll while the script runs
 // Otherwise it may change dropdown selection
 
-// paste and overwrite lines 11 to 33 with the cell content copied from gsheet
-// remove the quotations ("....") after pasting
 degree = 'Undergrad';
 semester = 'FALL 2025';
 course_code = 'CSE251';
@@ -338,3 +338,4 @@ async function scroll(element) {
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
+
